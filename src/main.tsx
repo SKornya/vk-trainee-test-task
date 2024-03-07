@@ -20,7 +20,7 @@ import { transformVKBridgeAdaptivity } from './transformers/transformVKBridgeAda
 vkBridge.send('VKWebAppInit');
 
 const Root: FunctionComponent = () => {
-  const vkBridgeAppearance = useAppearance() || undefined; // Вместо undefined можно задать значение по умолчанию
+  const vkBridgeAppearance = useAppearance() || 'dark'; // Вместо undefined можно задать значение по умолчанию
   const vkBridgeInsets = useInsets() || undefined; // Вместо undefined можно задать значение по умолчанию
   const vkBridgeAdaptivityProps = transformVKBridgeAdaptivity(useAdaptivity()); // Конвертируем значения из VK Bridge в параметры AdaptivityProvider
   const { vk_platform } = parseURLSearchParamsForGetLaunchParams(
