@@ -4,12 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tunnel": "vk-tunnel --insecure=1 --http-protocol=http --ws-protocol=wss --host=localhost --port=5173",
+    "deploy": "vite build && vk-miniapps-deploy"
   },
   "dependencies": {
+    "@vkontakte/vk-bridge": "^2.14.1",
+    "@vkontakte/vk-bridge-react": "^1.0.1",
+    "@vkontakte/vk-miniapps-deploy": "^0.1.6",
+    "@vkontakte/vk-tunnel": "^0.1.4",
     "@vkontakte/vkui": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
