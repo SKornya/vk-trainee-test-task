@@ -1,30 +1,24 @@
-# React + TypeScript + Vite
+## Тестовое задание на позицию стажера фронтенд-разработчика в VK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Описание
 
-Currently, two official plugins are available:
+Разработано React-приложение, состоящее из двух частей:
+  1. Блок с кнопкой и текстовым полем. По нажатию на кнопку выполняется запрос к <a href="https://vk.com/away.php?to=https%3A%2F%2Fcatfact.ninja%2Ffact&amp;utf=1" target="_blank">https://catfact.ninja/fact</a>. Полученный факт нужно записывается в текстовое поле, также в поле устанавливается курсор после первого слова.
+  2. Форма с текстовым полем и кнопкой отправки. Пользователь вводит своё имя в текстовом поле. По истечении 3-х секунд после ввода имени или при отправке формы выполняется запрос к <a href="https://vk.com/away.php?to=https%3A%2F%2Fapi.agify.io%2F&amp;utf=1" target="_blank">https://api.agify.io/</a> с введенным именем в параметре <em>name</em>. Ответом является возраст человека, определенный по имени. Этот ответ отображается под текстовым полем. 
+	Реализовано предотвращение дублирующих запросов (повторные запросы с тем же именем не отправляются), а также реализовано прерывание предыдущего запроса, если он не обработан в момент вызова текущего.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  Приложение разработано на React/TypeScript, с использованием VK UI и размещено в [VK mini apps](https://stage-app51872332-17b3e9a751be.pages.vk-apps.com/index.html)
 
-## Expanding the ESLint configuration
+### Локальный запуск
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+#### Клонирование репозитория
 
-- Configure the top-level `parserOptions` property like this:
+`git clone git@github.com:SKornya/vk-trainee-test-task.git`
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+#### Установка зависимостей
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+`yarn`
+
+#### Запуск
+
+`yarn start`
