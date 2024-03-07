@@ -49,10 +49,10 @@ const AgeSearch: FunctionComponent<{
         return;
       }
 
-      console.log(/^[a-zA-Z]+$/.test(username));
-
-      if (!/^[a-zA-Z]+$/.test(username)) {
-        throw Error('Invalid input pattern! Username may contains only letters');
+      if (!/^[a-zA-Zа-яА-Я]+$/.test(username)) {
+        throw Error(
+          'Invalid input pattern! Username may contains only letters'
+        );
       }
 
       setIsLoading(true);
