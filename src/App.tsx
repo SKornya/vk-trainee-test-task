@@ -1,16 +1,20 @@
-// import { useState } from 'react';
-// import './App.css';
 import FactsSearch from './components/FactsSearch/FactsSearch';
 import AgeSearch from './components/AgeSearch/AgeSearch';
+import { SplitCol, SplitLayout, View } from '@vkontakte/vkui';
+import { FunctionComponent, useState } from 'react';
 
-function App() {
-  // const [count, setCount] = useState(0);
+const App: FunctionComponent = () => {
+  const [activePanel, setActivePanel] = useState<string>('facts');
 
   return (
-    <>
-      <FactsSearch />
-      <AgeSearch />
-    </>
+    <SplitLayout>
+      <SplitCol>
+        <View activePanel={activePanel}>
+          <FactsSearch id='facts' setActivePanel={setActivePanel} />
+          <AgeSearch id='age' setActivePanel={setActivePanel} />
+        </View>
+      </SplitCol>
+    </SplitLayout>
   );
 }
 
